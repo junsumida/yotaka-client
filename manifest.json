@@ -1,6 +1,6 @@
 {
 	"name":"Usability Testing Extension",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"manifest_version": 2,
 	"description": "the very first version of usertesting.sjun.me extension.",
 	"browser_action": {
