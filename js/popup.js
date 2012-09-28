@@ -1,6 +1,6 @@
-/*global $ */
+/*global $,chrome */
 $(document).ready(function(){
 	$("#record").click(function(){
-		console.log("hoge");
+		chrome.tabs.executeScript(null, {file: "content_script.js"});
 	});
 });
