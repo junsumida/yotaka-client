@@ -1,4 +1,8 @@
-/*global $ */
+/*global $, io */
+var startTime = (new Date()).getTime();
+console.log(startTime);
+var uid = 0;
+
 console.log("external execution!");
 var html = document.getElementsByTagName("html");
 console.log(typeof html);
@@ -11,11 +15,15 @@ $(document).mousemove(function(e){
 	window.mosueY = e.pageY;
 	console.log(e.pageX);
 });
-/*
 function showMouseOffset(){
-	console.log("X:"+window.mouseX+" Y:"+window.mouseY);
-	setTimeout(showMouseOffset, 1000);
+  console.log(html[0].innerHTML);
+	setTimeout(showMouseOffset, 200);
 }
 
 showMouseOffset();
-*/
+
+var socket = io.connect('http://yotaka.sjun.me/');
+socket.on('news', function (data) {
+   console.log(data);
+   socket.emit('hoge', { msg: 'mogemoge' });
+});
